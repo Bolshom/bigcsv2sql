@@ -1,11 +1,12 @@
 Package: bigcsv2sql
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Big CSV to SQL
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
-Encoding: UTF-8
+Author: Natan Freitas Leite
+Maintainer: Natan Freitas Leite <natanfl@hotmail.com>
+Description: Function created to partition a big .csv file with FileSplitter, then
+it creates a .sqlite file with all data from .csv file.
+License: GNU v3
+Encoding: GMT-3
 LazyData: true
+Imports: data.table, testit
