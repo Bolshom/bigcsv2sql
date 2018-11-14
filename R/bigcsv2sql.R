@@ -1,10 +1,13 @@
 #Function to import .csv partition data to SQLite Database
-bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, sqlite.exepath, fsplit.exepath,
+bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, sqlite.exepath = NULL, fsplit.exepath = NULL,
                        rownumber.part = 1000000, header = T) {
   ### IMPORTANT: USE PATH WITH FORWARD SLASH ###
 
   require(data.table)
   require(testit)
+
+  if(is.null(sqlite.exepath)) sqlite.exepath = install.sqlite(); inst_sql = T
+  if(is.null(filesplitter.exepath)) fsplit.exepath = install.filesplitter(); inst_fsplit = T
 
   #Preparing SQL Database
   if (has_error(fread(paste0(csvpath, "/", csvfile.csv), nrows = 1))) {
@@ -66,5 +69,7 @@ bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, sqlite.exepath, fsp
   setwd(csvpath)
   unlink("partitions_90909x9x", recursive = T)
   unlink("script.sql")
+  if(inst_sql) unlink(sqlite.exepath, recursive = T)
+  if(inst_fsplit) unlink(fsplit.exepath, recursive = T)
 
 }
