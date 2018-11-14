@@ -4,9 +4,10 @@ Title: Big CSV to SQL
 Version: 0.1.0
 Author: Natan Freitas Leite
 Maintainer: Natan Freitas Leite <natanfl@hotmail.com>
-Description: Function created to partition a big .csv file with FileSplitter, then
-it creates a .sqlite file with all data from .csv file.
+Description: Function created to partition a big .csv file with FileSplitter, then it creates a .sqlite file with all data from .csv file.
 License: GNU v3
-Encoding: GMT-3
+Encoding: UTF-3
 LazyData: true
-Imports: data.table, testit
+Imports: 
+    data.table, 
+    testit
