@@ -71,5 +71,4 @@ bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, sqlite.exepath = NU
   unlink("script.sql")
   if(inst_sql) unlink(sqlite.exepath, recursive = T)
   if(inst_fsplit) unlink(fsplit.exepath, recursive = T)
-
 }
