@@ -1,6 +1,6 @@
 #Function to import .csv partition data to SQLite Database
-bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, sqlite.exepath = NULL, fsplit.exepath = NULL,
-                       rownumber.part = 1000000, header = T) {
+bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, rownumber.part = 1000000,
+                       sqlite.exepath = NULL, fsplit.exepath = NULL, header = T) {
   ### IMPORTANT: USE PATH WITH FORWARD SLASH ###
 
   require(data.table)
