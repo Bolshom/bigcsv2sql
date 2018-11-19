@@ -6,8 +6,14 @@ bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, rownumber.part = 10
   require(data.table)
   require(testit)
 
-  if(is.null(sqlite.exepath)) sqlite.exepath = install.sqlite(); inst_sql = T
-  if(is.null(filesplitter.exepath)) fsplit.exepath = install.filesplitter(); inst_fsplit = T
+  if(is.null(sqlite.exepath)) {
+    sqlite.exepath = install.sqlite()
+    inst_sql = T
+  }
+  if(is.null(fsplit.exepath)) {
+    fsplit.exepath = install.filesplitter()
+    inst_fsplit = T
+  }
 
   #Preparing SQL Database
   if (has_error(fread(paste0(csvpath, "/", csvfile.csv), nrows = 1))) {
