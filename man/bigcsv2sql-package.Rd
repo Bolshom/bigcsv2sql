@@ -6,7 +6,7 @@ Split and exports data to .sqlite file.
 \description{
 The package's purpose is to split and exports data, from a big .csv file, to a .sqlite file. This package requires FileSplitter to split the .csv, and also SQLite to create the SQL database. It was designed to work on a Windows-based OS.
 
-If the user's PC doesn't have File Splitter or SQLite softwares installed, then the package will unzip them temporarily, erasing the folders after the end of the function.
+If the user's PC doesn't have File Splitter or SQLite softwares installed, then the package will unzip them.
 
 IMPORTANT: USE PATH WITH FORWARD SLASH
 }
