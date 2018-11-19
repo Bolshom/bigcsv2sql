@@ -6,6 +6,8 @@ Initialize SQL database.
 }
 \description{
 This function takes a subset of the .csv file, in order to get each column type to prepare the SQL database. It also defines the column names within SQL's database. The function will try to use data.table::fread, but if this doesn't work it will try read.table (read.csv). It will work together with the main function bigcsv2sql.
+
+IMPORTANT: USE PATH WITH FORWARD SLASH
 }
 \usage{
 prepare.sql(outputfilename, csvpath, csvfile.csv, sqlite.exepath, read_func = "fread", header = T)
