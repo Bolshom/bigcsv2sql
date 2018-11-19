@@ -75,6 +75,6 @@ bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, rownumber.part = 10
   setwd(csvpath)
   unlink("partitions_90909x9x", recursive = T)
   unlink("script.sql")
-  if(inst_sql) unlink(sqlite.exepath, recursive = T)
-  if(inst_fsplit) unlink(fsplit.exepath, recursive = T)
+  if(inst_sql) unlink(sqlite.exepath, recursive = T, force = T)
+  if(inst_fsplit) unlink(fsplit.exepath, recursive = T, force = T)
 }
