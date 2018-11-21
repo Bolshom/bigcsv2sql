@@ -20,37 +20,33 @@ The softwares [FileSplitter](https://github.com/dubasdey/File-Splitter) and [SQL
 
 In R:
 
-> install.packages("devtools")
-
-> devtools::install_github("Bolshom/bigcsv2sql")
-
-> require(bigcsv2sql)
+```r
+install.packages("devtools")
+devtools::install_github("Bolshom/bigcsv2sql")
+require(bigcsv2sql)
+```
 
 Example:
 
-> csvpath = paste0(find.package("bigcsv2sql"), "/extdata")
-> bigcsv2sql("mtcars", csvpath, "mtcars.csv", 4)
+```r
+csvpath = paste0(find.package("bigcsv2sql"), "/extdata")
+bigcsv2sql("mtcars", csvpath, "mtcars.csv", 4)
+```
 
 This will generate a mtcars.sqlite file.
 
 Then one can use DBI package to send a query over this database:
 
-> require(dbplyr)
-
-> require(DBI)
-
-> require(RSQLite)
-
-> setwd(paste0(find.package("bigcsv2sql"), "/extdata"))
-
-> con = dbConnect(SQLite(), dbname = "mtcars.sqlite")
-
-> query = dbSendQuery(con, "select * from mtcars where carb >= 4")
-
-> results = dbFetch(query)
-
-> dbClearResult(query)
-
-> results
+```r
+require(dbplyr)
+require(DBI)
+require(RSQLite)
+setwd(paste0(find.package("bigcsv2sql"), "/extdata"))
+con = dbConnect(SQLite(), dbname = "mtcars.sqlite")
+query = dbSendQuery(con, "select * from mtcars where carb >= 4")
+results = dbFetch(query)
+dbClearResult(query)
+results
+```
 
 Check [DBI documentation](https://cran.r-project.org/web/packages/DBI/DBI.pdf) for further knowledge about the usage.
