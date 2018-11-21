@@ -21,7 +21,9 @@ The softwares [FileSplitter](https://github.com/dubasdey/File-Splitter) and [SQL
 In R:
 
 > install.packages("devtools")
+
 > devtools::install_github("Bolshom/bigcsv2sql")
+
 > require(bigcsv2sql)
 
 Example:
@@ -34,13 +36,21 @@ This will generate a mtcars.sqlite file.
 Then one can use DBI package to send a query over this database:
 
 > require(dbplyr)
+
 > require(DBI)
+
 > require(RSQLite)
+
 > setwd(paste0(find.package("bigcsv2sql"), "/extdata"))
+
 > con = dbConnect(SQLite(), dbname = "mtcars.sqlite")
+
 > query = dbSendQuery(con, "select * from mtcars where carb >= 4")
+
 > results = dbFetch(query)
+
 > dbClearResult(query)
+
 > results
 
 Check [DBI documentation](https://cran.r-project.org/web/packages/DBI/DBI.pdf) for further knowledge about the usage.
