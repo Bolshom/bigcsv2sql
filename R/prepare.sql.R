@@ -1,6 +1,8 @@
 #Function to initialize SQL Database with correct column classes
 prepare.sql = function (outputfilename, csvpath, csvfile.csv, sqlite.exepath, read_func = "fread", header = T) {
 
+  older_path = getwd()
+
   require(data.table)
 
   setwd(csvpath)
@@ -39,4 +41,5 @@ prepare.sql = function (outputfilename, csvpath, csvfile.csv, sqlite.exepath, re
   #Cleaning auxiliar script
   setwd(csvpath)
   unlink("script.schema.sql")
+  setwd(older_path)
 }

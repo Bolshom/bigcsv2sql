@@ -3,6 +3,8 @@ bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, rownumber.part = 10
                        sqlite.exepath = NULL, fsplit.exepath = NULL, header = T) {
   ### IMPORTANT: USE PATH WITH FORWARD SLASH ###
 
+  older_path = getwd()
+
   require(data.table)
   require(testit)
 
@@ -69,4 +71,5 @@ bigcsv2sql = function (outputfilename, csvpath, csvfile.csv, rownumber.part = 10
   setwd(csvpath)
   unlink("partitions_90909x9x", recursive = T)
   unlink("script.sql")
+  setwd(older_path)
 }
